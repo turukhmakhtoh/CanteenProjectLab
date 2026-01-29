@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create User</title>
+  <link rel="stylesheet" href="../style.css" />
+
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Canteen Admin</h2>
+  <ul>
+    <li onclick="location.href='admin.html'">Dashboard</li>
+    <li>Orders</li>
+    <li>Menu</li>
+    <li class="active">Users</li>
+    <li onclick="location.href='../login.html'">Logout</li>
+  </ul>
+</div>
+
+<!-- Main -->
+<div class="main">
+  <h1>Create User</h1>
+
+<div class="card form-card">
+    <label>Name</label>
+    <input type="text" id="name" placeholder="Full Name" />
+
+    <label>Email</label>
+    <input type="email" id="email" placeholder="Email address" />
+
+    <label>Role</label>
+    <select id="role">
+      <option value="faculty">Faculty</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Temporary password" />
+
+    <button onclick="createUser()">Create User</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="users.js"></script>
+<script src="create-user.js"></script>
+</body>
+</html>

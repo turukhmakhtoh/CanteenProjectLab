@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Canteen Admin Dashboard</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>Canteen Admin</h2>
+  <ul>
+    <li class="active" id="dashboardTab" onclick="showDashboard()">Dashboard</li>
+    <li id="ordersTab" onclick="showOrders()">Orders</li>
+    <li onclick="location.href='menu.html'">Menu</li>
+    <li onclick="location.href='create-user.html'">Users</li>
+    <li>Logout</li>
+  </ul>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- DASHBOARD SECTION -->
+  <div id="dashboardSection">
+    <h1>Dashboard</h1>
+
+    <!-- Stats -->
+    <div class="stats">
+      <div class="card">Total Orders<br><span id="totalOrders">0</span></div>
+      <div class="card">Pending Orders<br><span id="pendingOrders">0</span></div>
+      <div class="card">Revenue (₹)<br><span id="revenue">0</span></div>
+    </div>
+
+    <h2>Today’s Orders</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Faculty</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTable"></tbody>
+    </table>
+  </div>
+
+  <!-- ORDERS SECTION -->
+  <div id="ordersSection" style="display: none;">
+    <h1>Orders</h1>
+
+    <!-- DATE FILTER (ONLY HERE) -->
+    <label>
+      Select Date:
+      <input type="date" id="ordersDateFilter" onchange="loadOrdersOnly()" />
+    </label>
+
+    <h2>All Orders</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Date</th>
+          <th>Faculty</th>
+          <th>Items</th>
+          <th>Total</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="ordersTableOrders"></tbody>
+    </table>
+  </div>
+
+</div>
+
+<!-- MODAL -->
+<div id="orderModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>Order Details</h2>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
